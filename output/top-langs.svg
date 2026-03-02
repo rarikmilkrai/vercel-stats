@@ -62,30 +62,30 @@
       <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
     </g>
     <g transform="translate(25, 165)">
+      <circle cx="0" cy="-6" r="5" fill="#f1e05a" />
+      <text x="15" y="0" class="lang-name">JavaScript</text>
+      <text x="240" y="0" class="lang-percent" text-anchor="end">6.7%</text>
+    </g>
+    <g transform="translate(25, 173)">
+      <rect width="14.74" height="4" rx="2" fill="#f1e05a" opacity="0.8" />
+      <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
+    </g>
+    <g transform="translate(25, 200)">
       <circle cx="0" cy="-6" r="5" fill="#b07219" />
       <text x="15" y="0" class="lang-name">Java</text>
       <text x="240" y="0" class="lang-percent" text-anchor="end">6.7%</text>
     </g>
-    <g transform="translate(25, 173)">
+    <g transform="translate(25, 208)">
       <rect width="14.74" height="4" rx="2" fill="#b07219" opacity="0.8" />
       <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
     </g>
-    <g transform="translate(25, 200)">
+    <g transform="translate(25, 235)">
       <circle cx="0" cy="-6" r="5" fill="#41b883" />
       <text x="15" y="0" class="lang-name">Vue</text>
       <text x="240" y="0" class="lang-percent" text-anchor="end">6.7%</text>
     </g>
-    <g transform="translate(25, 208)">
-      <rect width="14.74" height="4" rx="2" fill="#41b883" opacity="0.8" />
-      <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
-    </g>
-    <g transform="translate(25, 235)">
-      <circle cx="0" cy="-6" r="5" fill="#00ADD8" />
-      <text x="15" y="0" class="lang-name">Go</text>
-      <text x="240" y="0" class="lang-percent" text-anchor="end">6.7%</text>
-    </g>
     <g transform="translate(25, 243)">
-      <rect width="14.74" height="4" rx="2" fill="#00ADD8" opacity="0.8" />
+      <rect width="14.74" height="4" rx="2" fill="#41b883" opacity="0.8" />
       <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
     </g>
   
