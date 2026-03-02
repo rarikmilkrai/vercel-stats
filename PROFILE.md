@@ -13,11 +13,15 @@ Sou **DevOps Engineer** e **Embaixador LinuxTips SP**.
 
 ### 📊 GitHub Stats
 
+<div align="center">
+
 ![GitHub Stats](output/github-stats.svg)
 
 ![GitHub Streak](output/github-streak.svg)
 
 ![Top Langs](output/top-langs.svg)
+
+</div>
 
 ---
 
