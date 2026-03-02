@@ -1,0 +1,69 @@
+<svg width="495" height="195" viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1b27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .card {
+      fill: url(#grad1);
+      stroke: #70a5fd;
+      stroke-width: 1;
+      rx: 4.5;
+    }
+    .title {
+      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #70a5fd;
+    }
+    .stat-label {
+      font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #a9b1d6;
+    }
+    .stat-value {
+      font: 600 12px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #bb9af7;
+    }
+    .subtitle {
+      font: 400 12px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #7aa2f7;
+    }
+  </style>
+  
+  <rect class="card" x="0.5" y="0.5" width="494" height="194" />
+  
+  <g transform="translate(25, 35)">
+    <text x="0" y="0" class="title">Rarikmilkrai Souza's GitHub Stats</text>
+  </g>
+  
+  
+    <g transform="translate(32, 50)">
+      <text x="0" y="0" class="stat-label">⭐ Total Stars:</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">28</text>
+    </g>
+    <g transform="translate(32, 75)">
+      <text x="0" y="0" class="stat-label">📝 Total Commits:</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">0</text>
+    </g>
+    <g transform="translate(32, 100)">
+      <text x="0" y="0" class="stat-label">🔀 Total PRs:</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">0</text>
+    </g>
+    <g transform="translate(272, 50)">
+      <text x="0" y="0" class="stat-label">❗ Total Issues:</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">0</text>
+    </g>
+    <g transform="translate(272, 75)">
+      <text x="0" y="0" class="stat-label">📦 Public Repos:</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">30</text>
+    </g>
+    <g transform="translate(272, 100)">
+      <text x="0" y="0" class="stat-label">👥 Followers:</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">209</text>
+    </g>
+  
+  <g transform="translate(470, 185)">
+    <text x="0" y="0" class="subtitle" text-anchor="end">@rarikmilkrai</text>
+  </g>
+</svg>

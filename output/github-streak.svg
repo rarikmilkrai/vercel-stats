@@ -1,0 +1,57 @@
+<svg width="495" height="195" viewBox="0 0 495 195" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1b27;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <style>
+    .card {
+      fill: url(#grad2);
+      stroke: #70a5fd;
+      stroke-width: 1;
+      rx: 4.5;
+    }
+    .title {
+      font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #70a5fd;
+    }
+    .streak-number {
+      font: 700 32px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #bb9af7;
+    }
+    .streak-label {
+      font: 400 14px 'Segoe UI', Ubuntu, Sans-Serif;
+      fill: #a9b1d6;
+    }
+    .fire-icon {
+      font-size: 36px;
+    }
+  </style>
+  
+  <rect class="card" x="0.5" y="0.5" width="494" height="194" />
+  
+  <g transform="translate(25, 35)">
+    <text x="0" y="0" class="title">🔥 GitHub Streak</text>
+  </g>
+  
+  <g transform="translate(247.5, 90)">
+    <text x="0" y="0" class="streak-number" text-anchor="middle">1</text>
+    <text x="0" y="25" class="streak-label" text-anchor="middle">Current Streak</text>
+  </g>
+  
+  <g transform="translate(100, 140)">
+    <text x="0" y="0" class="streak-label">1</text>
+    <text x="0" y="18" class="streak-label" style="font-size: 11px;">Longest Streak</text>
+  </g>
+  
+  <g transform="translate(395, 140)">
+    <text x="0" y="0" class="streak-label" text-anchor="end">2</text>
+    <text x="0" y="18" class="streak-label" text-anchor="end" style="font-size: 11px;">Total Days</text>
+  </g>
+  
+  <g transform="translate(470, 185)">
+    <text x="0" y="0" class="streak-label" text-anchor="end">@rarikmilkrai</text>
+  </g>
+</svg>

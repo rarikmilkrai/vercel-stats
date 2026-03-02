@@ -1,0 +1,23 @@
+{
+  "name": "github-stats-generator",
+  "version": "1.0.0",
+  "description": "Gerador estático de estatísticas do GitHub com atualização automática diária",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "update": "node src/index.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": [
+    "github",
+    "stats",
+    "readme",
+    "svg"
+  ],
+  "author": "RARIK",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.6.7"
+  }
+}

@@ -1,0 +1,45 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    # Executa todo dia às 00:00 (meia-noite) horário de São Paulo (03:00 UTC)
+    - cron: '0 3 * * *'
+  workflow_dispatch: # Permite execução manual
+  push:
+    branches:
+      - main
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Generate GitHub Stats
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: npm run update
+      
+      - name: Commit and push if changed
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add output/
+          git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualizar stats do GitHub [skip ci]" && git push)
