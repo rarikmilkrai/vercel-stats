@@ -21,7 +21,7 @@ Gerador automático de estatísticas do GitHub com atualização diária via Git
 ### 1. Clone o repositório
 
 ```bash
-git clone <seu-repo>
+git clone https://github.com/rarikmilkrai/vercel-stats
 cd vercel-stats
 ```
 
