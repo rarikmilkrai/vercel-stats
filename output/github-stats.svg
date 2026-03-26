@@ -48,7 +48,7 @@
     </g>
     <g transform="translate(32, 100)">
       <text x="0" y="0" class="stat-label">🔀 Total PRs:</text>
-      <text x="200" y="0" class="stat-value" text-anchor="end">0</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">1</text>
     </g>
     <g transform="translate(272, 50)">
       <text x="0" y="0" class="stat-label">❗ Total Issues:</text>
@@ -56,11 +56,11 @@
     </g>
     <g transform="translate(272, 75)">
       <text x="0" y="0" class="stat-label">📦 Public Repos:</text>
-      <text x="200" y="0" class="stat-value" text-anchor="end">30</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">31</text>
     </g>
     <g transform="translate(272, 100)">
       <text x="0" y="0" class="stat-label">👥 Followers:</text>
-      <text x="200" y="0" class="stat-value" text-anchor="end">207</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">215</text>
     </g>
   
   <g transform="translate(470, 185)">
