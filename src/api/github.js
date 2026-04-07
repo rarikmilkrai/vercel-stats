@@ -60,7 +60,14 @@ function calculateStats(user, repos, events) {
   const totalCommits = calculateTotalCommits(events);
   const totalPRs = events.filter(e => e.type === 'PullRequestEvent').length;
   const totalIssues = events.filter(e => e.type === 'IssuesEvent').length;
-  
+
+  // adicionar contagem de commits por repositório
+  ownRepos.forEach(repo => {
+    const repoEvents = events.filter(e => e.repo.name === repo.full_name && e.type === 'PushEvent');
+    const repoCommits = calculateTotalCommits(repoEvents);
+    repo.commitCount = repoCommits;
+  });
+
   // Calcular linguagens
   const languages = calculateLanguages(repos);
   
