@@ -37,7 +37,7 @@
   </g>
   
   <g transform="translate(247.5, 90)">
-    <text x="0" y="0" class="streak-number" text-anchor="middle">0</text>
+    <text x="0" y="0" class="streak-number" text-anchor="middle">1</text>
     <text x="0" y="25" class="streak-label" text-anchor="middle">Current Streak</text>
   </g>
   
@@ -47,7 +47,7 @@
   </g>
   
   <g transform="translate(395, 140)">
-    <text x="0" y="0" class="streak-label" text-anchor="end">1</text>
+    <text x="0" y="0" class="streak-label" text-anchor="end">2</text>
     <text x="0" y="18" class="streak-label" text-anchor="end" style="font-size: 11px;">Total Days</text>
   </g>
   
