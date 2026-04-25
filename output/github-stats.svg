@@ -48,7 +48,7 @@
     </g>
     <g transform="translate(32, 100)">
       <text x="0" y="0" class="stat-label">🔀 Total PRs:</text>
-      <text x="200" y="0" class="stat-value" text-anchor="end">1</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">0</text>
     </g>
     <g transform="translate(272, 50)">
       <text x="0" y="0" class="stat-label">❗ Total Issues:</text>
@@ -60,7 +60,7 @@
     </g>
     <g transform="translate(272, 100)">
       <text x="0" y="0" class="stat-label">👥 Followers:</text>
-      <text x="200" y="0" class="stat-value" text-anchor="end">200</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">204</text>
     </g>
   
   <g transform="translate(470, 185)">
