@@ -42,12 +42,12 @@
   </g>
   
   <g transform="translate(100, 140)">
-    <text x="0" y="0" class="streak-label">0</text>
+    <text x="0" y="0" class="streak-label">1</text>
     <text x="0" y="18" class="streak-label" style="font-size: 11px;">Longest Streak</text>
   </g>
   
   <g transform="translate(395, 140)">
-    <text x="0" y="0" class="streak-label" text-anchor="end">0</text>
+    <text x="0" y="0" class="streak-label" text-anchor="end">1</text>
     <text x="0" y="18" class="streak-label" text-anchor="end" style="font-size: 11px;">Total Days</text>
   </g>
   
