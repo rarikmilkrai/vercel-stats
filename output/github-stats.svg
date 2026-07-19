@@ -56,7 +56,7 @@
     </g>
     <g transform="translate(272, 75)">
       <text x="0" y="0" class="stat-label">📦 Public Repos:</text>
-      <text x="200" y="0" class="stat-value" text-anchor="end">32</text>
+      <text x="200" y="0" class="stat-value" text-anchor="end">33</text>
     </g>
     <g transform="translate(272, 100)">
       <text x="0" y="0" class="stat-label">👥 Followers:</text>
