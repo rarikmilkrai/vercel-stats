@@ -28,12 +28,13 @@ export async function fetchGitHubData(username) {
     // Buscar commits recentes (para calcular streak)
     const events = await fetchRecentEvents(username, headers);
 
-    // Buscar total real de PRs/Issues (via Search API, cobre qualquer repo público do GitHub)
-    const totalPRs = await fetchSearchCount(`author:${username} is:pr`, headers);
-    const totalIssues = await fetchSearchCount(`author:${username} is:issue`, headers);
+    // Buscar total real de PRs/Issues/Commits (via Search API, cobre qualquer repo público do GitHub)
+    const totalPRs = await fetchSearchCount('search/issues', `author:${username} is:pr`, headers);
+    const totalIssues = await fetchSearchCount('search/issues', `author:${username} is:issue`, headers);
+    const totalCommits = await fetchSearchCount('search/commits', `author:${username}`, headers);
 
     // Calcular estatísticas
-    const stats = calculateStats(user, repos, events, totalPRs, totalIssues);
+    const stats = calculateStats(user, repos, events, totalPRs, totalIssues, totalCommits);
 
     return stats;
   } catch (error) {
@@ -54,37 +55,29 @@ async function fetchRecentEvents(username, headers) {
   }
 }
 
-// Nota: a Search API só enxerga repositórios públicos. PRs/Issues em repos
-// privados de organizações (ex: da empresa) nunca entram nessa contagem,
-// pois o GITHUB_TOKEN do Actions não tem acesso a esses repositórios.
-async function fetchSearchCount(query, headers) {
+// Nota: a Search API só enxerga repositórios públicos. PRs/Issues/commits em
+// repos privados de organizações (ex: da empresa) nunca entram nessa
+// contagem, pois o GITHUB_TOKEN do Actions não tem acesso a esses repositórios.
+async function fetchSearchCount(endpoint, query, headers) {
   try {
-    const response = await axios.get(`${GITHUB_API}/search/issues`, {
+    const response = await axios.get(`${GITHUB_API}/${endpoint}`, {
       headers,
       params: { q: query, per_page: 1 },
     });
     return response.data.total_count || 0;
   } catch (error) {
-    console.warn(`Aviso: não foi possível buscar contagem para "${query}"`);
+    console.warn(`Aviso: não foi possível buscar contagem para "${query}" em ${endpoint}`);
     return 0;
   }
 }
 
-function calculateStats(user, repos, events, totalPRs, totalIssues) {
+function calculateStats(user, repos, events, totalPRs, totalIssues, totalCommits) {
   // Filtrar repos próprios (não forks)
   const ownRepos = repos.filter(repo => !repo.fork);
 
   // Calcular totais
   const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
   const totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
-  const totalCommits = calculateTotalCommits(events);
-
-  // adicionar contagem de commits por repositório
-  ownRepos.forEach(repo => {
-    const repoEvents = events.filter(e => e.repo.name === repo.full_name && e.type === 'PushEvent');
-    const repoCommits = calculateTotalCommits(repoEvents);
-    repo.commitCount = repoCommits;
-  });
 
   // Calcular linguagens
   const languages = calculateLanguages(repos);
@@ -108,13 +101,6 @@ function calculateStats(user, repos, events, totalPRs, totalIssues) {
     streak,
     createdAt: user.created_at,
   };
-}
-
-function calculateTotalCommits(events) {
-  const pushEvents = events.filter(e => e.type === 'PushEvent');
-  return pushEvents.reduce((sum, event) => {
-    return sum + (event.payload?.commits?.length || 0);
-  }, 0);
 }
 
 function calculateLanguages(repos) {
