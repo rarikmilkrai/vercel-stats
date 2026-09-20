@@ -27,10 +27,14 @@ export async function fetchGitHubData(username) {
     
     // Buscar commits recentes (para calcular streak)
     const events = await fetchRecentEvents(username, headers);
-    
+
+    // Buscar total real de PRs/Issues (via Search API, cobre qualquer repo público do GitHub)
+    const totalPRs = await fetchSearchCount(`author:${username} is:pr`, headers);
+    const totalIssues = await fetchSearchCount(`author:${username} is:issue`, headers);
+
     // Calcular estatísticas
-    const stats = calculateStats(user, repos, events);
-    
+    const stats = calculateStats(user, repos, events, totalPRs, totalIssues);
+
     return stats;
   } catch (error) {
     throw new Error(`Erro ao buscar dados do GitHub: ${error.message}`);
@@ -50,16 +54,30 @@ async function fetchRecentEvents(username, headers) {
   }
 }
 
-function calculateStats(user, repos, events) {
+// Nota: a Search API só enxerga repositórios públicos. PRs/Issues em repos
+// privados de organizações (ex: da empresa) nunca entram nessa contagem,
+// pois o GITHUB_TOKEN do Actions não tem acesso a esses repositórios.
+async function fetchSearchCount(query, headers) {
+  try {
+    const response = await axios.get(`${GITHUB_API}/search/issues`, {
+      headers,
+      params: { q: query, per_page: 1 },
+    });
+    return response.data.total_count || 0;
+  } catch (error) {
+    console.warn(`Aviso: não foi possível buscar contagem para "${query}"`);
+    return 0;
+  }
+}
+
+function calculateStats(user, repos, events, totalPRs, totalIssues) {
   // Filtrar repos próprios (não forks)
   const ownRepos = repos.filter(repo => !repo.fork);
-  
+
   // Calcular totais
   const totalStars = repos.reduce((sum, repo) => sum + repo.stargazers_count, 0);
   const totalForks = repos.reduce((sum, repo) => sum + repo.forks_count, 0);
   const totalCommits = calculateTotalCommits(events);
-  const totalPRs = events.filter(e => e.type === 'PullRequestEvent').length;
-  const totalIssues = events.filter(e => e.type === 'IssuesEvent').length;
 
   // adicionar contagem de commits por repositório
   ownRepos.forEach(repo => {

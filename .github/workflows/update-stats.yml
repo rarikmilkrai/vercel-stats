@@ -39,7 +39,7 @@ jobs:
       
       - name: Commit and push if changed
         run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "96403081+rarikmilkrai@users.noreply.github.com"
+          git config --local user.name "Rarikmilkrai Souza"
           git add output/
           git diff --quiet && git diff --staged --quiet || (git commit -m "🤖 Atualizar stats do GitHub [skip ci]" && git push)
