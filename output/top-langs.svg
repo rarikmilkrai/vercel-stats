@@ -71,21 +71,21 @@
       <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
     </g>
     <g transform="translate(25, 200)">
-      <circle cx="0" cy="-6" r="5" fill="#3178c6" />
-      <text x="15" y="0" class="lang-name">TypeScript</text>
-      <text x="240" y="0" class="lang-percent" text-anchor="end">5.9%</text>
-    </g>
-    <g transform="translate(25, 208)">
-      <rect width="12.98" height="4" rx="2" fill="#3178c6" opacity="0.8" />
-      <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
-    </g>
-    <g transform="translate(25, 235)">
       <circle cx="0" cy="-6" r="5" fill="#f1e05a" />
       <text x="15" y="0" class="lang-name">JavaScript</text>
       <text x="240" y="0" class="lang-percent" text-anchor="end">5.9%</text>
     </g>
-    <g transform="translate(25, 243)">
+    <g transform="translate(25, 208)">
       <rect width="12.98" height="4" rx="2" fill="#f1e05a" opacity="0.8" />
+      <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
+    </g>
+    <g transform="translate(25, 235)">
+      <circle cx="0" cy="-6" r="5" fill="#3178c6" />
+      <text x="15" y="0" class="lang-name">TypeScript</text>
+      <text x="240" y="0" class="lang-percent" text-anchor="end">5.9%</text>
+    </g>
+    <g transform="translate(25, 243)">
+      <rect width="12.98" height="4" rx="2" fill="#3178c6" opacity="0.8" />
       <rect width="250" height="4" rx="2" fill="#ffffff" opacity="0.1" />
     </g>
   
